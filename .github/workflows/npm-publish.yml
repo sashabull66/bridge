@@ -13,8 +13,14 @@ jobs:
           node-version: 16
       - run: yarn install
 
-  publish-npm:
+  tests:
+    runs-on: ubuntu-latest
     needs: build
+    steps:
+      - run: yarn test
+
+  publish-npm:
+    needs: [build, tests]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
