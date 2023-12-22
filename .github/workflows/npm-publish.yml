@@ -35,8 +35,8 @@ jobs:
 
     steps:
       - name: condition 1
-        if: runner.os == 'Windows'
-        run: echo "The operating system on the runner is $env:RUNNER_OS."
+        if: github.event.inputs.version == 'beta'
+        run: echo "OK SASHA!!!!!"
         
       - name: condition 2
         if: runner.os != 'Windows'
