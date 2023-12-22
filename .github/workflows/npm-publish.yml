@@ -42,11 +42,9 @@ jobs:
         run: yarn
 
       - name: Build app
-        if: ${{ github.event.inputs.version }} === 'beta'
         run: yarn build
 
       - name: Set NPM Token
-        if: ${{ github.event.inputs.version }} === 'beta'
         uses: filipstefansson/set-npm-token-action@v1
         with:
           token: ${{ secrets.NPM_AUTH_TOKEN }}
