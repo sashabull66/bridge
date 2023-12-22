@@ -1,4 +1,4 @@
-name: Node.js Package
+name: Publish to npm
 
 on:
   workflow_dispatch:
@@ -6,20 +6,19 @@ on:
 
       features:
         type: text
-        description: changelog_features
+        description: changelog features
 
       bugfixes:
         type: text
-        description: changelog_bugfixes
+        description: changelog bugfixes
 
       breaking-changes:
         type: text
-        description: changelog_breaking_changes
+        description: changelog breaking changes
         
       choice:
         type: choice
         description: Выбери какая версия будет выпускаться
-        default: ""
         options:
         - beta
         - patch
