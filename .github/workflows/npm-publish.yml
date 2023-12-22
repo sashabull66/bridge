@@ -48,7 +48,7 @@ jobs:
           token: ${{ secrets.NPM_AUTH_TOKEN }}
           
       # Все что написано ниже для beta
-        if: ${{ github.event.inputs.version }} == 'beta'
+      #  if: ${{ github.event.inputs.version }} == 'beta'
       - name: Set current commit sha
         id: vars
         run: echo "sha_short=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
