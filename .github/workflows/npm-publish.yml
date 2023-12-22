@@ -19,8 +19,10 @@ on:
       choice:
         type: choice
         description: Выбери какая версия будет выпускаться
+        default: ""
         options:
         - beta
+        - patch
         - minore
         - majore
 jobs:
