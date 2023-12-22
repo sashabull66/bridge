@@ -2,7 +2,14 @@ name: Node.js Package
 
 on:
   workflow_dispatch:
-
+    inputs:
+      choice:
+        type: choice
+        description: Make a choice
+        options:
+        - foo
+        - bar
+        - baz
 jobs:
   build:
     runs-on: ubuntu-latest
