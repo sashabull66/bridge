@@ -37,6 +37,8 @@ jobs:
       - uses: actions/checkout@v1
         with:
           fetch-depth: 0
+      - name: CHECK
+        run: echo "${{ github.event.inputs.version }}"
 
       - name: Install dependencies
         run: yarn
