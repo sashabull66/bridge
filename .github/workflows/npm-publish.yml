@@ -4,19 +4,17 @@ on:
   workflow_dispatch:
     inputs:
 
-      name:
-        type: choice
-        description: Who to greet
-        options: 
-        - monalisa
-        - cschleiden
-      message:
-        required: true
-      use-emoji:
-        type: boolean
-        description: Include 🎉🤣 emojis
-      environment:
-        type: environment
+      features:
+        type: text
+        description: changelog_features
+
+      bugfixes:
+        type: text
+        description: changelog_bugfixes
+
+      breaking-changes:
+        type: text
+        description: changelog_breaking_changes
         
       choice:
         type: choice
