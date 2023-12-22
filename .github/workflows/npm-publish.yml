@@ -16,7 +16,7 @@ on:
         type: text
         description: changelog breaking changes
         
-      choice:
+      version:
         type: choice
         description: Choose which version to release
         options:
@@ -48,6 +48,7 @@ jobs:
           token: ${{ secrets.NPM_AUTH_TOKEN }}
           
       # Все что написано ниже для beta
+        if: ${{ github.event.inputs.version }} == 'beta'
       - name: Set current commit sha
         id: vars
         run: echo "sha_short=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
