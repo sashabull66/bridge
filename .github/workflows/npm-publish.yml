@@ -3,6 +3,21 @@ name: Node.js Package
 on:
   workflow_dispatch:
     inputs:
+
+      name:
+        type: choice
+        description: Who to greet
+        options: 
+        - monalisa
+        - cschleiden
+      message:
+        required: true
+      use-emoji:
+        type: boolean
+        description: Include 🎉🤣 emojis
+      environment:
+        type: environment
+        
       choice:
         type: choice
         description: Выбери какая версия будет выпускаться
