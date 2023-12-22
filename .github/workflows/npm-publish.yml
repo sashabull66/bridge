@@ -24,14 +24,17 @@ on:
         - patch
         - minore
         - majore
+
+      #  if: ${{ github.event.inputs.version }} == 'beta'
 jobs:
   build:
+    env:
+      CI: true
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
 
     steps:
-      - name: Checkout
       - uses: actions/checkout@v1
         with:
           fetch-depth: 0
@@ -39,16 +42,14 @@ jobs:
       - name: Install dependencies
         run: yarn
 
-      - name: Build application
+      - name: Build app
         run: yarn build
 
       - name: Set NPM Token
         uses: filipstefansson/set-npm-token-action@v1
         with:
           token: ${{ secrets.NPM_AUTH_TOKEN }}
-          
-      # Все что написано ниже для beta
-      #  if: ${{ github.event.inputs.version }} == 'beta'
+
       - name: Set current commit sha
         id: vars
         run: echo "sha_short=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
