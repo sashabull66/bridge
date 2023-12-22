@@ -5,11 +5,11 @@ on:
     inputs:
       choice:
         type: choice
-        description: Make a choice
+        description: Выбери какая версия будет выпускаться
         options:
-        - foo
-        - bar
-        - baz
+        - beta
+        - minore
+        - majore
 jobs:
   build:
     runs-on: ubuntu-latest
