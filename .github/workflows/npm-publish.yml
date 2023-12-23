@@ -22,8 +22,8 @@ on:
         options:
         - beta
         - patch
-        - minore
-        - majore
+        - minor
+        - major
 
 jobs:
   build:
