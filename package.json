@@ -5,7 +5,8 @@
     "main": "",
     "scripts": {
         "build": "yarn lib:compile",
-        "lib:compile": "yarn lib:compile:clean && yarn lib:compile:ts && yarn lib:compile:copy-resources",
+        "lib:compile": "yarn lib:compile:clean && yarn lib:compile:ts && yarn lib:compile:copy-resources && yarn lib:compile:copy-package-json",
+        "lib:compile:copy-package-json": "shx cp package.json .publish/package.json",
         "lib:compile:copy-resources": "yarn copyfiles -e \"**/*.{[jt]s*(x),snap}\" -e \"**/stories.module.css\" -e \"**/*.json\" -u 1 \"src/**/*\" .publish",
         "lib:compile:clean": "shx rm -rf .publish",
         "lib:compile:ts": "tsc --project tsconfig.build.json",
