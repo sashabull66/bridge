@@ -69,4 +69,4 @@ jobs:
         if: github.event.inputs.version != 'beta'
         run: npm run pub:release
         env:
-          RELEASE_VERSION: github.event.inputs.version
+          RELEASE_VERSION: ${{ github.event.inputs.version}}
