@@ -66,7 +66,7 @@ jobs:
           BETA_VERSION: ${{ steps.package-version.outputs.current-version}}-beta.${{ steps.vars.outputs.sha_short }}
 
       - name: DIR
-        working-directory: ./publish
+        working-directory: .publish
         run: ls -la
       
       - name: Publish release version
