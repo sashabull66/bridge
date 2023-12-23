@@ -67,6 +67,7 @@ jobs:
 
       - name: DIR
         working-directory: ./publish
+        run: ls -la
       
       - name: Publish release version
         if: github.event.inputs.version != 'beta'
