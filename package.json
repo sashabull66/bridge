@@ -15,7 +15,9 @@
         "lint:fix": "yarn lint:scripts --fix",
         "format": "prettier --write \"./**/*.{ts,tsx,js,jsx,css,json}\"",
         "lib:test": "jest --collect-coverage",
-        "test": "yarn lib:test"
+        "test": "yarn lib:test",
+        "pub:beta": "cd .publish && npm version \"$BETA_VERSION\" --no-git-tag-version && npm publish --userconfig \"../.npmrc\" --tag beta",
+        "pub:release": "cd .publish && npm version \"$RELEASE_VERSION\" --no-git-tag-version && npm publish --userconfig \"../.npmrc\""
     },
     "dependencies": {},
     "devDependencies": {
