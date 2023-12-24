@@ -36,8 +36,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1
         with:
-          ref: ${{ github.ref_name }}
-          fetch-depth: 0
+          ref: ${{ github.event.pull_request.head.ref }}
 
       - name: Install dependencies
         run: yarn
