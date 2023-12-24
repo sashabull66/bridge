@@ -1,7 +1,7 @@
 {
     "license": "UNLICENSED",
     "name": "sashabull-native",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "main": "",
     "scripts": {
         "build": "yarn lib:compile",
