@@ -36,6 +36,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1
         with:
+          ref: ${{ github.ref_name }}
           fetch-depth: 0
 
       - name: Install dependencies
